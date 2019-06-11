@@ -7,6 +7,15 @@ app.get('/', function (req, res) {
     res.send('Hello GET!');
 });
 
+app.post('/', function (req, res) {
+    console.log('I received a POST request to the home page');
+    res.send('Hello POST!');
+});
+
+app.delete('/del_user', function (req, res) {
+    console.log('I received a DELETE request to the /del/user page')
+})
+
 var server = app.listen(3000, function () {
     console.log('The sample app listens on http://localhost: 3000');
 });
