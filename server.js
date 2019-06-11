@@ -13,8 +13,9 @@ app.post('/', function (req, res) {
 });
 
 app.delete('/del_user', function (req, res) {
-    console.log('I received a DELETE request to the /del/user page')
-})
+    console.log('I received a DELETE request to the /del/user page');
+    res.send('Hello DELETE!');
+});
 
 var server = app.listen(3000, function () {
     console.log('The sample app listens on http://localhost: 3000');
