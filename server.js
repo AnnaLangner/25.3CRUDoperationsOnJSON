@@ -2,9 +2,9 @@ var express = require('express');
 
 var app = express();
 
-app.get('/:id', function (req, res) {
+app.get('/', function (req, res) {
     console.log('I received a GET request to the home page');
-    res.send('The ID that has been left added it' + req.params.id);
+    res.send('Hellow World!');
 });
 
 // app.get('/list_user', function (req, res) {
@@ -27,3 +27,7 @@ app.delete('/del_user', function (req, res) {
 });
 
 app.listen(3000);
+
+app.use(function (req, res, next) {
+    res.status(404).send('Sorry, we could not find what you want!')
+});
