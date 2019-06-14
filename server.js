@@ -17,9 +17,11 @@ app.get('/getNote', function (req, res) {
 });
 
 app.post('/updateNote/:note', function (req, res) {
+    req.params.note = stringifyFile;
     fs.writeFile('.package.json', stringifyFile, function (err) {
         if (err) throw err;
         console.log('file updated');
+        res.send(stringifyFile);
     })
 });
 
